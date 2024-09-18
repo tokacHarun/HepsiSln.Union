@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8501E8F1-188A-4DB7-A05A-F319A4FE4492}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{982D7ED3-A781-46E5-8CC4-E11B0AC2645D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{69CAFA31-E0E5-4D7A-A3CA-52C5D4B8210C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiSln.Application", "Core\HepsiSln.Application\HepsiSln.Application.csproj", "{3B5E0E75-BCAC-4129-BAE2-A8BD0A607FBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiSln.Domain", "Core\HepsiSln.Domain\HepsiSln.Domain.csproj", "{89FE63FB-D5BE-4278-A9A5-6DC6975CB41B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiSln.Infrastructure", "Infrastructure\HepsiSln.Infrastructure\HepsiSln.Infrastructure.csproj", "{CEE7440B-CB49-4A11-B5F6-554B50A84334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiSln.Persistence", "Infrastructure\HepsiSln.Persistence\HepsiSln.Persistence.csproj", "{FA436D3D-852C-49B5-83B9-04787F512E37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiSln.Api", "Presentation\HepsiSln.Api\HepsiSln.Api.csproj", "{DADE98E3-0500-4A3F-BF8B-9B03E2BCACAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B5E0E75-BCAC-4129-BAE2-A8BD0A607FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5E0E75-BCAC-4129-BAE2-A8BD0A607FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5E0E75-BCAC-4129-BAE2-A8BD0A607FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5E0E75-BCAC-4129-BAE2-A8BD0A607FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89FE63FB-D5BE-4278-A9A5-6DC6975CB41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89FE63FB-D5BE-4278-A9A5-6DC6975CB41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89FE63FB-D5BE-4278-A9A5-6DC6975CB41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89FE63FB-D5BE-4278-A9A5-6DC6975CB41B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE7440B-CB49-4A11-B5F6-554B50A84334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE7440B-CB49-4A11-B5F6-554B50A84334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE7440B-CB49-4A11-B5F6-554B50A84334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE7440B-CB49-4A11-B5F6-554B50A84334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA436D3D-852C-49B5-83B9-04787F512E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA436D3D-852C-49B5-83B9-04787F512E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA436D3D-852C-49B5-83B9-04787F512E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA436D3D-852C-49B5-83B9-04787F512E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADE98E3-0500-4A3F-BF8B-9B03E2BCACAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADE98E3-0500-4A3F-BF8B-9B03E2BCACAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADE98E3-0500-4A3F-BF8B-9B03E2BCACAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADE98E3-0500-4A3F-BF8B-9B03E2BCACAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3B5E0E75-BCAC-4129-BAE2-A8BD0A607FBF} = {8501E8F1-188A-4DB7-A05A-F319A4FE4492}
+		{89FE63FB-D5BE-4278-A9A5-6DC6975CB41B} = {8501E8F1-188A-4DB7-A05A-F319A4FE4492}
+		{CEE7440B-CB49-4A11-B5F6-554B50A84334} = {982D7ED3-A781-46E5-8CC4-E11B0AC2645D}
+		{FA436D3D-852C-49B5-83B9-04787F512E37} = {982D7ED3-A781-46E5-8CC4-E11B0AC2645D}
+		{DADE98E3-0500-4A3F-BF8B-9B03E2BCACAA} = {69CAFA31-E0E5-4D7A-A3CA-52C5D4B8210C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F28BDBD-065D-415E-B953-E81D1AA14AEF}
+	EndGlobalSection
+EndGlobal
