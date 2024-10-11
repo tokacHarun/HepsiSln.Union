@@ -8,7 +8,7 @@ namespace HepsiSln.Domain.Common
 {
     public class BaseEntity : IBaseEntity
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public bool IsDeleted { get; set; } = false;
     }

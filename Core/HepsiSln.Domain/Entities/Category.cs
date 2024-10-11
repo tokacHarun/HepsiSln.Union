@@ -9,7 +9,7 @@ namespace HepsiSln.Domain.Entities
 {
     public class Category : BaseEntity
     {
-        public Guid ParentId { get; set; }
+        public int ParentId { get; set; }
         public string Name { get; set; }
         public int Priorty { get; set; }
         public IList<Detail> Details { get; set; }
@@ -19,7 +19,7 @@ namespace HepsiSln.Domain.Entities
         {
 
         }
-        public Category(Guid ParentId, string Name, int Priorty)
+        public Category(int ParentId, string Name, int Priorty)
         {
             this.ParentId = ParentId;
             this.Name = Name;
