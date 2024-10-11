@@ -11,7 +11,7 @@ namespace HepsiSln.Domain.Entities
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public Guid BrandId { get; set; }
+        public int BrandId { get; set; }
         public Brand Brand { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
@@ -21,7 +21,7 @@ namespace HepsiSln.Domain.Entities
         {
             
         }
-        public Product(string Title,string Description,Guid BrandId,decimal Price, decimal Discount)
+        public Product(string Title,string Description,int BrandId,decimal Price, decimal Discount)
         {
             this.Title = Title;
             this.Description = Description;
