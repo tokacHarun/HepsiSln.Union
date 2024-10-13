@@ -42,6 +42,7 @@ namespace HepsiSln.Persistence.Configurations
                 IsDeleted = true
             };
             builder.HasData(brand1, brand2, brand3);
+
         }
     }
 }
