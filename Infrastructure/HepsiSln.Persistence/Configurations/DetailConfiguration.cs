@@ -14,7 +14,7 @@ namespace HepsiSln.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Detail> builder)
         {
-            Faker faker = new("tr");
+            Faker faker = new("en_US");
 
             Detail detail1 = new()
             {

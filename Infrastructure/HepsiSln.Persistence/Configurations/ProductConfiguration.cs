@@ -15,7 +15,7 @@ namespace HepsiSln.Persistence.Configurations
 
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            Faker faker = new("tr");
+            Faker faker = new("en_US");
 
             Product product1 = new()
             {

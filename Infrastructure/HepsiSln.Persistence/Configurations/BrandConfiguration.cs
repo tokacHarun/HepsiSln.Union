@@ -16,7 +16,7 @@ namespace HepsiSln.Persistence.Configurations
         {
             builder.Property(x => x.Name).HasMaxLength(256);
 
-            Faker faker = new("Tr");
+            Faker faker = new("en_US");
 
             Brand brand1 = new Brand()
             {
