@@ -18,8 +18,4 @@
     <ProjectReference Include="..\..\Infrastructure\HepsiSln.Persistence\HepsiSln.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
