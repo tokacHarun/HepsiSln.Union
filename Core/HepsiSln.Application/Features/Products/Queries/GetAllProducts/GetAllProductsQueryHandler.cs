@@ -1,6 +1,9 @@
-﻿using HepsiSln.Application.Interfaces.UnitOfWorks;
+﻿using HepsiSln.Application.DTOs;
+using HepsiSln.Application.Interfaces.AutoMapper;
+using HepsiSln.Application.Interfaces.UnitOfWorks;
 using HepsiSln.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,25 +16,24 @@ namespace HepsiSln.Application.Features.Products.Queries.GetAllProducts
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQueryRequest, IList<GetAllProductsQueryResponse>>
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly IMapper mapper;
 
-        public GetAllProductsQueryHandler(IUnitOfWork unitOfWork)
+        public GetAllProductsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
+            this.mapper = mapper;
         }
         public async Task<IList<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
         {
-            var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync();
-            List<GetAllProductsQueryResponse> response = new();
+            var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync(include: x => x.Include(b => b.Brand));
 
-            foreach (var product in products)
-                response.Add(new GetAllProductsQueryResponse
-                {
-                    Title = product.Title,
-                    Description = product.Description,
-                    Discount = product.Discount,
-                    Price = product.Price - (product.Price * product.Discount / 100),
-                });
-            return response;
+            var brand = mapper.Map<BrandDto, Brand>(new Brand());
+
+            var map = mapper.Map<GetAllProductsQueryResponse, Product>(products);
+
+            foreach (var item in map)
+                item.Price -= (item.Price * item.Discount / 100);
+            return map;
         }
     }
 }
