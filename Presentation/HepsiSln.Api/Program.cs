@@ -1,6 +1,7 @@
 using HepsiSln.Persistence;
 using HepsiSln.Application;
 using HepsiApi.Mapper;
+using HepsiSln.Application.Exceptions;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +34,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.ConfigureExceptionHandlingMiddleware();
 
 app.UseAuthorization();
 
