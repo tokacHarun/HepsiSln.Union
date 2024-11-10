@@ -13,6 +13,8 @@ namespace HepsiSln.Application.Interfaces.Repostories
         Task<T> UpdateAsync(T entity);
         Task AddRangeAsync(IList<T> entities);
         Task HardDeleteAsync(T entity);
-        
+        Task HardDeleteRangeAsync(IList<T> entity);
+
+
     }
 }

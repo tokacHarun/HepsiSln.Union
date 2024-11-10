@@ -15,20 +15,21 @@ namespace HepsiSln.Domain.Entities
         public Brand Brand { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
-        public IList<Category> Categories { get; set; }
+        public IList<ProductCategory> ProductCategories { get; set; }
 
         public Product()
         {
             
         }
-        public Product(string Title,string Description,int BrandId,decimal Price, decimal Discount)
+       
+
+        public Product(int brandId, string title, string description, decimal price, decimal discount)
         {
-            this.Title = Title;
-            this.Description = Description;
-            this.BrandId = BrandId;
-            this.Price = Price;
-            this.Discount = Discount;
-            
+            BrandId = brandId;
+            Title = title;
+            Description = description;
+            Price = price;
+            Discount = discount;
         }
     }
 }

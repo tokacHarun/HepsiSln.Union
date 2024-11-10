@@ -25,6 +25,21 @@ namespace HepsiSln.Application.Features.Products.Queries.GetAllProducts
         }
         public async Task<IList<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
         {
+
+
+            // 1) hem çikolata hem de marka ıd gelecek
+
+            // 2) ilgili olan hem çikolata hemde marka tablosunda id veri çekeceksin
+
+            // 3) marka silme işlemi 
+
+            var delete = await unitOfWork.GetWriteRepository<Brand>().HardDeleteAsync(null);
+
+            var delete2 = await unitOfWork.GetWriteRepository<Product>().HardDeleteAsync(null);
+
+
+            return null;
+
             var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync(include: x => x.Include(b => b.Brand));
 
             var brand = mapper.Map<BrandDto, Brand>(new Brand());
