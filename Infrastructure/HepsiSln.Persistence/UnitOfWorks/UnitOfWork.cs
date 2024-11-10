@@ -2,6 +2,7 @@
 using HepsiSln.Application.Interfaces.UnitOfWorks;
 using HepsiSln.Persistence.Context;
 using HepsiSln.Persistence.Repostories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,23 @@ namespace HepsiSln.Persistence.UnitOfWorks
         {
             this.dbContext = dbContext;
         }
+
+        public async Task CommitAsync()
+        {
+            await dbContext.Database.CommitTransactionAsync();
+        }
+
         public async ValueTask DisposeAsync() => await dbContext.DisposeAsync();
 
+        public async Task OpenTransactionAsync()
+        {
+            await dbContext.Database.OpenConnectionAsync();
+        }
+
+        public async Task RollBackAsync()
+        {
+            await dbContext.Database.RollbackTransactionAsync();
+        }
 
         public int Save() => dbContext.SaveChanges();
 
@@ -32,6 +48,6 @@ namespace HepsiSln.Persistence.UnitOfWorks
 
 
         IWriteRepository<T> IUnitOfWork.GetWriteRepository<T>() => new WriteRepository<T>(dbContext);
-       
+
     }
 }

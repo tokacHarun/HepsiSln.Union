@@ -13,6 +13,11 @@ namespace HepsiSln.Application.Interfaces.UnitOfWorks
         IReadRepository<T> GetReadRepository<T>() where T : class, IBaseEntity, new();
         IWriteRepository<T> GetWriteRepository<T>() where T : class, IBaseEntity, new();
         Task<int> SaveAsync();
+
+        Task CommitAsync();
+
+        Task RollBackAsync();
+        Task OpenTransactionAsync();
         int Save();
     }
 }

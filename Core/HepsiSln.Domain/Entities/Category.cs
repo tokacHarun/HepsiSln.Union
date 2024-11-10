@@ -13,7 +13,7 @@ namespace HepsiSln.Domain.Entities
         public string Name { get; set; }
         public int Priorty { get; set; }
         public IList<Detail> Details { get; set; }
-        public IList<Product> Products { get; set; }
+        public IList<ProductCategory> ProductCategories { get; set; }
 
         public Category()
         {
