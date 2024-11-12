@@ -4,7 +4,7 @@ using MediatR;
 
 namespace HepsiSln.Application.Features.Products.Command.CreateProduct
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest,Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 
@@ -12,7 +12,7 @@ namespace HepsiSln.Application.Features.Products.Command.CreateProduct
         {
             this.unitOfWork = unitOfWork;
         }
-        public async Task Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
             Product product = new(request.BrandId, request.Title, request.Description, request.Price, request.Discount);
             await unitOfWork.GetWriteRepository<Product>().AddAsync(product);
@@ -27,6 +27,7 @@ namespace HepsiSln.Application.Features.Products.Command.CreateProduct
                     });
 
             }
+            return Unit.Value;
         }
     }
 }
