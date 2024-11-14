@@ -15,7 +15,7 @@ namespace HepsiSln.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            Faker faker = new("en_US");
+            Faker faker = new("tr");
 
             Category category1 = new()
             {
