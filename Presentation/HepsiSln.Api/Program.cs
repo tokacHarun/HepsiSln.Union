@@ -2,6 +2,8 @@ using HepsiSln.Persistence;
 using HepsiSln.Application;
 using HepsiApi.Mapper;
 using HepsiSln.Application.Exceptions;
+using HepsiSln.Infrastructure;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +24,7 @@ builder.Configuration
     .AddJsonFile("appsettings.json", optional: false)
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
