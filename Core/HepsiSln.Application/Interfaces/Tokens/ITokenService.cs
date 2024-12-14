@@ -8,6 +8,6 @@ namespace HepsiSln.Application.Interfaces.Tokens
     {
         Task<JwtSecurityToken> CreateToken(User user, IList<String> roles);
         string GenerateRefreshToken();
-        ClaimsPrincipal? GetPrincibalFromExpiredToken();
+        ClaimsPrincipal? GetPrincibalFromExpiredToken(string? token);
     }
 }
