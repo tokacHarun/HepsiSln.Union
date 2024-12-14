@@ -33,7 +33,9 @@ namespace HepsiSln.Application.Features.Products.Queries.GetAllProducts
 
             // 3) marka silme işlemi 
 
-           
+            var delete = await unitOfWork.GetWriteRepository<Brand>().HardDeleteAsync(null);
+
+            var delete2 = await unitOfWork.GetWriteRepository<Product>().HardDeleteAsync(null);
 
 
             return null;
